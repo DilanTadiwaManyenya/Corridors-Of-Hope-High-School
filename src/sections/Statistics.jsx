@@ -2,118 +2,68 @@ import { motion } from "framer-motion";
 import { stats } from "../data/stats";
 
 export default function Statistics() {
+
   return (
-    <section className="py-24 bg-[#102A5C] relative overflow-hidden">
+    <section className="py-24 bg-[#F8F7F3]">
 
-
-      {/* Decorative Background */}
-      <div
-        className="
-          absolute
-          -top-20
-          -right-20
-          w-72
-          h-72
-          bg-[#C9A13B]/20
-          rounded-full
-          blur-3xl
-        "
-      />
-
-      <div
-        className="
-          absolute
-          -bottom-20
-          -left-20
-          w-72
-          h-72
-          bg-white/10
-          rounded-full
-          blur-3xl
-        "
-      />
-
-
-
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="
+        max-w-7xl
+        mx-auto
+        px-6
+      ">
 
 
         {/* Heading */}
-        <motion.div
-          initial={{
-            opacity:0,
-            y:30
-          }}
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-          viewport={{
-            once:true
-          }}
-          transition={{
-            duration:.7
-          }}
-          className="text-center mb-16"
-        >
 
-          <span
-            className="
-              uppercase
-              tracking-[5px]
-              text-[#C9A13B]
-              font-semibold
-              text-sm
-            "
-          >
+        <div className="text-center max-w-3xl mx-auto">
+
+          <p className="
+            uppercase
+            tracking-[5px]
+            text-[#C9A13B]
+            font-semibold
+            text-sm
+          ">
             Our Impact
-          </span>
+          </p>
 
 
-          <h2
-            className="
-              mt-4
-              text-4xl
-              md:text-5xl
-              font-bold
-              text-white
-            "
-          >
+          <h2 className="
+            mt-4
+            text-4xl
+            md:text-5xl
+            font-bold
+            text-[#102A5C]
+          ">
             Numbers That Tell Our Story
           </h2>
 
 
-          <p
-            className="
-              mt-5
-              text-gray-200
-              max-w-3xl
-              mx-auto
-              leading-8
-            "
-          >
+          <p className="
+            mt-5
+            text-gray-600
+            text-lg
+          ">
             Every achievement reflects our commitment to nurturing
-            excellence, discipline, and future leaders.
+            excellence, discipline, character, and future leaders.
           </p>
 
-
-        </motion.div>
-
+        </div>
 
 
 
-        {/* Stats Grid */}
-        <div
-          className="
-            grid
-            grid-cols-2
-            lg:grid-cols-4
-            gap-6
-          "
-        >
+        {/* Cards */}
+
+        <div className="
+          grid
+          grid-cols-2
+          md:grid-cols-4
+          gap-6
+          mt-16
+        ">
+
 
           {stats.map((item,index)=>(
-
 
             <motion.div
 
@@ -121,7 +71,7 @@ export default function Statistics() {
 
               initial={{
                 opacity:0,
-                y:40
+                y:30
               }}
 
               whileInView={{
@@ -134,47 +84,40 @@ export default function Statistics() {
               }}
 
               transition={{
-                delay:index*.15
+                delay:index * .1
               }}
 
-
               className="
-                bg-white/10
-                backdrop-blur-lg
-                border
-                border-white/20
+                bg-white
                 rounded-3xl
                 p-8
                 text-center
-                hover:-translate-y-2
+                shadow-lg
+                hover:-translate-y-3
                 transition
                 duration-300
               "
 
             >
 
-
-              <h3
-                className="
-                  text-5xl
-                  font-extrabold
-                  text-[#C9A13B]
-                "
-              >
-
+              <h3 className="
+                text-4xl
+                md:text-5xl
+                font-extrabold
+                text-[#102A5C]
+              ">
                 {item.number}
-                {item.suffix}
-
+                <span className="text-[#C9A13B]">
+                  {item.suffix}
+                </span>
               </h3>
 
 
-              <p
-                className="
-                  mt-4
-                  text-white
-                  font-medium
-                "
-              >
+              <p className="
+                mt-4
+                text-gray-600
+                font-medium
+              ">
                 {item.label}
               </p>
 

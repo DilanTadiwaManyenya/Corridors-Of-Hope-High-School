@@ -1,265 +1,369 @@
-import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import {
+  HiOutlineMenuAlt3,
+  HiOutlineX,
+} from "react-icons/hi";
+import { FiArrowUpRight } from "react-icons/fi";
 
 import logo from "../../assets/images/cohhs-logo.png";
-import { NAV_LINKS } from "../../utils/constants";
+
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Academics", path: "/academics" },
+  { name: "Admissions", path: "/admissions" },
+  { name: "Student Life", path: "/student-life" },
+  { name: "Gallery", path: "/gallery" },
+  { name: "News", path: "/news" },
+  { name: "Contact", path: "/contact" },
+];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Navbar background on scroll
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      setScrolled(window.scrollY > 20);
     };
+
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
 
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
-  }, [menuOpen]);
+  }, [mobileOpen]);
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+  };
 
   return (
     <>
-      {/* ================= NAVBAR ================= */}
-
+      {/* NAVBAR */}
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-white/85 backdrop-blur-xl shadow-xl py-3"
-            : "bg-transparent py-5"
-        }`}
+        className={`
+          fixed
+          top-0
+          left-0
+          right-0
+          z-50
+          transition-all
+          duration-500
+          ${
+            scrolled
+              ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100"
+              : "bg-white/90 backdrop-blur-md"
+          }
+        `}
       >
-        <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="h-20 lg:h-24 flex items-center justify-between">
 
-          {/* Logo */}
+            {/* LOGO */}
+            <Link
+              to="/"
+              onClick={closeMobileMenu}
+              className="flex items-center gap-3 shrink-0"
+            >
+              <motion.img
+                src={logo}
+                alt="Corridors Of Hope High School"
+                whileHover={{ scale: 1.04 }}
+                transition={{ duration: 0.2 }}
+                className="
+                  w-14
+                  h-14
+                  lg:w-16
+                  lg:h-16
+                  object-contain
+                "
+              />
 
-          <Link to="/" className="flex items-center gap-4">
+              <div className="hidden sm:block leading-none">
+                <p className="text-[#102A5C] font-extrabold text-sm lg:text-base tracking-tight">
+                  Corridors Of Hope
+                </p>
 
-            <motion.img
-              whileHover={{ scale: 1.05 }}
-              src={logo}
-              alt="Corridors Of Hope"
-              className="w-14 h-14 object-contain"
-            />
+                <p className="text-[#102A5C]/60 text-[10px] lg:text-xs mt-1 tracking-[0.18em] uppercase">
+                  High School
+                </p>
+              </div>
+            </Link>
 
-            <div>
-
-              <h2
-                className={`font-bold text-lg transition ${
-                  scrolled ? "text-[#102A5C]" : "text-white"
-                }`}
-              >
-                Corridors Of Hope
-              </h2>
-
-              <p
-                className={`text-xs transition ${
-                  scrolled ? "text-gray-500" : "text-gray-300"
-                }`}
-              >
-                Opening Corridors Of Life
-              </p>
-
-            </div>
-
-          </Link>
-
-          {/* Desktop Links */}
-
-          <ul className="hidden lg:flex items-center gap-10">
-
-            {NAV_LINKS.map((link) => (
-
-              <li key={link.path}>
-
+            {/* DESKTOP NAV */}
+            <nav className="hidden xl:flex items-center gap-7">
+              {navLinks.map((link) => (
                 <NavLink
+                  key={link.path}
                   to={link.path}
-                  className={({ isActive }) =>
-                    `relative font-medium transition ${
-                      scrolled
-                        ? "text-[#102A5C]"
-                        : "text-white"
-                    } ${
+                  className={({ isActive }) => `
+                    relative
+                    py-2
+                    text-[13px]
+                    font-semibold
+                    transition-colors
+                    duration-300
+                    ${
                       isActive
-                        ? "text-[#C9A13B]"
-                        : "hover:text-[#C9A13B]"
-                    }`
-                  }
+                        ? "text-[#102A5C]"
+                        : "text-gray-600 hover:text-[#102A5C]"
+                    }
+                  `}
                 >
                   {({ isActive }) => (
                     <>
-                      {link.title}
+                      {link.name}
 
-                      <motion.span
-                        layoutId="navbar-indicator"
-                        className={`absolute left-0 -bottom-2 h-[3px] rounded-full bg-[#C9A13B] ${
-                          isActive ? "w-full" : "w-0"
-                        }`}
+                      <span
+                        className={`
+                          absolute
+                          -bottom-1
+                          left-0
+                          h-[2px]
+                          bg-[#C9A13B]
+                          rounded-full
+                          transition-all
+                          duration-300
+                          ${
+                            isActive
+                              ? "w-full"
+                              : "w-0"
+                          }
+                        `}
                       />
                     </>
                   )}
                 </NavLink>
+              ))}
+            </nav>
 
-              </li>
+            {/* CTA */}
+            <div className="hidden xl:flex items-center">
+              <Link
+                to="/admissions"
+                className="
+                  group
+                  flex
+                  items-center
+                  gap-2
+                  bg-[#102A5C]
+                  hover:bg-[#C9A13B]
+                  text-white
+                  px-5
+                  py-3
+                  rounded-full
+                  text-sm
+                  font-semibold
+                  shadow-md
+                  hover:shadow-xl
+                  transition-all
+                  duration-300
+                "
+              >
+                Apply for 2026
 
-            ))}
+                <FiArrowUpRight
+                  size={17}
+                  className="
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-0.5
+                    group-hover:-translate-y-0.5
+                  "
+                />
+              </Link>
+            </div>
 
-          </ul>
-
-          {/* CTA */}
-
-          <Link
-            to="/admissions"
-            className="
-              hidden
-              lg:flex
-              items-center
-              bg-[#C9A13B]
-              hover:bg-[#B88D22]
-              text-white
-              px-7
-              py-3
-              rounded-full
-              font-semibold
-              shadow-xl
-              transition
-              hover:-translate-y-1
-            "
-          >
-            Apply for 2026 →
-          </Link>
-
-          {/* Mobile Button */}
-
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className={`lg:hidden text-3xl ${
-              scrolled ? "text-[#102A5C]" : "text-white"
-            }`}
-            aria-label="Toggle navigation"
-          >
-            {menuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
-          </button>
-
-        </nav>
+            {/* MOBILE BUTTON */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={
+                mobileOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+              }
+              className="
+                xl:hidden
+                w-11
+                h-11
+                rounded-full
+                bg-[#102A5C]
+                text-white
+                flex
+                items-center
+                justify-center
+                hover:bg-[#C9A13B]
+                transition-colors
+              "
+            >
+              {mobileOpen ? (
+                <HiOutlineX size={24} />
+              ) : (
+                <HiOutlineMenuAlt3 size={24} />
+              )}
+            </button>
+          </div>
+        </div>
       </header>
 
-      {/* ================= MOBILE MENU ================= */}
-
+      {/* MOBILE MENU */}
       <AnimatePresence>
-
-        {menuOpen && (
-
+        {mobileOpen && (
           <>
-            {/* Overlay */}
-
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setMenuOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              onClick={closeMobileMenu}
+              className="
+                fixed
+                inset-0
+                z-40
+                bg-[#102A5C]/40
+                backdrop-blur-sm
+                xl:hidden
+              "
             />
 
             {/* Drawer */}
-
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
               transition={{
-                type: "spring",
-                damping: 25,
+                duration: 0.25,
               }}
               className="
                 fixed
-                top-0
-                right-0
-                h-screen
-                w-[320px]
-                bg-white
+                top-20
+                left-4
+                right-4
                 z-50
+                bg-white
+                rounded-3xl
                 shadow-2xl
-                px-8
-                py-10
+                border
+                border-gray-100
+                p-6
+                xl:hidden
               "
             >
+              <nav className="flex flex-col">
 
-              <div className="flex justify-between items-center mb-12">
-
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-14"
-                />
-
-                <button
-                  onClick={() => setMenuOpen(false)}
-                  className="text-3xl text-[#102A5C]"
-                >
-                  <HiOutlineX />
-                </button>
-
-              </div>
-
-              <nav className="flex flex-col gap-7">
-
-                {NAV_LINKS.map((link) => (
-
-                  <NavLink
+                {navLinks.map((link, index) => (
+                  <motion.div
                     key={link.path}
-                    to={link.path}
-                    onClick={() => setMenuOpen(false)}
-                    className={({ isActive }) =>
-                      isActive
-                        ? "text-[#C9A13B] text-xl font-semibold"
-                        : "text-[#102A5C] text-xl hover:text-[#C9A13B] transition"
-                    }
+                    initial={{
+                      opacity: 0,
+                      x: -10,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: index * 0.04,
+                    }}
                   >
-                    {link.title}
-                  </NavLink>
+                    <NavLink
+                      to={link.path}
+                      onClick={closeMobileMenu}
+                      className={({ isActive }) => `
+                        flex
+                        items-center
+                        justify-between
+                        py-4
+                        border-b
+                        border-gray-100
+                        font-semibold
+                        transition-colors
+                        ${
+                          isActive
+                            ? "text-[#C9A13B]"
+                            : "text-[#102A5C] hover:text-[#C9A13B]"
+                        }
+                      `}
+                    >
+                      {({ isActive }) => (
+                        <>
+                          <span>{link.name}</span>
 
+                          {isActive && (
+                            <span className="w-2 h-2 rounded-full bg-[#C9A13B]" />
+                          )}
+                        </>
+                      )}
+                    </NavLink>
+                  </motion.div>
                 ))}
 
               </nav>
 
+              {/* Mobile CTA */}
               <Link
                 to="/admissions"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="
-                  mt-12
-                  block
-                  text-center
+                  mt-6
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  w-full
                   bg-[#102A5C]
+                  hover:bg-[#C9A13B]
                   text-white
                   py-4
-                  rounded-full
+                  rounded-2xl
                   font-semibold
-                  hover:bg-[#0B2149]
-                  transition
+                  transition-colors
                 "
               >
                 Apply for 2026
+
+                <FiArrowUpRight size={18} />
               </Link>
 
+              {/* Motto */}
+              <p
+                className="
+                  mt-6
+                  text-center
+                  text-[10px]
+                  uppercase
+                  tracking-[0.25em]
+                  text-gray-400
+                "
+              >
+                Opening Corridors Of Life
+              </p>
             </motion.div>
-
           </>
-
         )}
-
       </AnimatePresence>
     </>
   );

@@ -1,214 +1,261 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FiArrowRight, FiCheck } from "react-icons/fi";
 
 export default function Welcome() {
   return (
-    <section className="py-28 bg-white">
+    <section className="relative overflow-hidden bg-[#F8F7F4] py-24 lg:py-32">
 
-      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      {/* Decorative background */}
+      <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
 
-        {/* Principal Image */}
+        {/* IMAGE SIDE */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
           className="relative"
         >
 
-
-          {/* Gold Accent */}
-          <div
-            className="
-              absolute
-              -top-6
-              -left-6
-              w-36
-              h-36
-              border-4
-              border-[#C9A13B]
-              rounded-[35px]
-              hidden
-              md:block
-            "
-          />
-
+          {/* Gold frame */}
+          <div className="
+            absolute
+            -left-5
+            -top-5
+            hidden
+            h-full
+            w-full
+            rounded-[2rem]
+            border-2
+            border-[#C9A13B]
+            lg:block
+          " />
 
           {/* Image */}
-          <img
-            src="/images/principal.jpg"
-            alt="Principal of Corridors Of Hope High School"
-            className="
-              relative
-              z-10
-              rounded-[40px]
-              shadow-2xl
-              w-full
-              object-cover
-              transition
-              duration-500
-              hover:scale-[1.02]
-            "
-          />
+          <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
 
-
-
-          {/* Principal Badge */}
-          <div
-            className="
-              absolute
-              z-20
-              bottom-6
-              left-6
-              bg-white
-              shadow-xl
-              rounded-2xl
-              px-6
-              py-4
-            "
-          >
-
-            <p className="
-              text-sm
-              text-gray-500
-            ">
-              Principal
-            </p>
-
-            <h3
+            <img
+              src="/images/principal.jpg"
+              alt="Principal of Corridors Of Hope High School"
               className="
-                font-bold
-                text-[#102A5C]
+                h-[480px]
+                w-full
+                object-cover
+                transition-transform
+                duration-700
+                hover:scale-105
+                lg:h-[580px]
               "
-            >
-              Corridors Of Hope
-            </h3>
+            />
+
+            {/* Image overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#102A5C]/80 via-transparent to-transparent" />
+
+            {/* Principal label */}
+            <div className="absolute bottom-6 left-6 right-6">
+
+              <div className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-md">
+
+                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#C9A13B]">
+                  Leadership
+                </p>
+
+                <p className="mt-1 text-lg font-bold text-white">
+                  Principal
+                </p>
+
+                <p className="mt-1 text-sm text-white/70">
+                  Corridors Of Hope High School
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+        </motion.div>
+
+        {/* CONTENT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
+
+          {/* Eyebrow */}
+          <div className="flex items-center gap-4">
+
+            <span className="h-px w-12 bg-[#C9A13B]" />
+
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C9A13B]">
+              Welcome
+            </span>
 
           </div>
 
-
-        </motion.div>
-
-
-
-
-
-        {/* Content */}
-        <motion.div
-
-          initial={{ opacity:0, x:40 }}
-
-          whileInView={{ opacity:1, x:0 }}
-
-          viewport={{ once:true }}
-
-          transition={{ duration:.7 }}
-
-        >
-
-
-          <span
-            className="
-              uppercase
-              tracking-[6px]
-              text-[#C9A13B]
-              font-semibold
-              text-sm
-            "
-          >
-            Welcome
-          </span>
-
-
-
-          <h2
-            className="
-              mt-5
-              text-4xl
-              md:text-5xl
-              font-bold
-              text-[#102A5C]
-              leading-tight
-            "
-          >
+          {/* Heading */}
+          <h2 className="
+            mt-6
+            text-4xl
+            font-extrabold
+            leading-tight
+            tracking-tight
+            text-[#102A5C]
+            sm:text-5xl
+            lg:text-6xl
+          ">
             A Message From
-            <br />
-            The Principal
+            <span className="block text-[#C9A13B]">
+              The Principal
+            </span>
           </h2>
 
-
-
-          <div
-            className="
-              mt-5
-              w-20
-              h-1
-              bg-[#C9A13B]
-              rounded-full
-            "
-          />
-
-
-
-          <p
-            className="
-              mt-8
-              leading-8
-              text-gray-600
-              text-lg
-            "
-          >
+          {/* Main paragraph */}
+          <p className="
+            mt-8
+            text-lg
+            leading-8
+            text-gray-600
+          ">
             Welcome to Corridors Of Hope High School, where we inspire
             academic excellence, leadership, discipline, and innovation.
             Our commitment is to prepare every learner for a successful
             future through quality education and strong moral values.
           </p>
 
-
-
-          <p
-            className="
-              mt-5
-              leading-8
-              text-gray-600
-            "
-          >
+          {/* Secondary paragraph */}
+          <p className="
+            mt-5
+            leading-8
+            text-gray-500
+          ">
             Through dedicated teachers, a supportive environment, and
             character-driven education, we create opportunities for every
             student to discover their potential.
           </p>
 
+          {/* Values */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
 
+            <div className="flex items-center gap-3">
+              <span className="
+                flex
+                h-8
+                w-8
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#102A5C]
+                text-white
+              ">
+                <FiCheck size={15} />
+              </span>
 
+              <span className="text-sm font-semibold text-[#102A5C]">
+                Academic Excellence
+              </span>
+            </div>
 
+            <div className="flex items-center gap-3">
+              <span className="
+                flex
+                h-8
+                w-8
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#102A5C]
+                text-white
+              ">
+                <FiCheck size={15} />
+              </span>
+
+              <span className="text-sm font-semibold text-[#102A5C]">
+                Character Development
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="
+                flex
+                h-8
+                w-8
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#102A5C]
+                text-white
+              ">
+                <FiCheck size={15} />
+              </span>
+
+              <span className="text-sm font-semibold text-[#102A5C]">
+                Leadership Development
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span className="
+                flex
+                h-8
+                w-8
+                shrink-0
+                items-center
+                justify-center
+                rounded-full
+                bg-[#102A5C]
+                text-white
+              ">
+                <FiCheck size={15} />
+              </span>
+
+              <span className="text-sm font-semibold text-[#102A5C]">
+                Christian Values
+              </span>
+            </div>
+
+          </div>
+
+          {/* CTA */}
           <Link
             to="/about"
             className="
+              group
+              mt-10
               inline-flex
               items-center
-              mt-8
-              bg-[#102A5C]
-              hover:bg-[#C9A13B]
-              text-white
-              px-9
-              py-4
+              gap-3
               rounded-full
+              bg-[#102A5C]
+              px-7
+              py-4
               font-semibold
-              transition
-              duration-300
+              text-white
               shadow-lg
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:bg-[#C9A13B]
             "
           >
             Discover Our School
-          </Link>
 
+            <FiArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Link>
 
         </motion.div>
 
-
       </div>
-
     </section>
   );
 }

@@ -1,33 +1,39 @@
 import {
-  FaUserGraduate,
-  FaBookOpen,
+  FaUserShield,
+  FaFire,
   FaHandshake,
-  FaAward,
+  FaStar
 } from "react-icons/fa";
 
+
 export const values = [
+
   {
-    icon: FaUserGraduate,
-    title: "Discipline",
+    icon: FaUserShield,
+    title:"Discipline",
     description:
-      "We cultivate responsible, respectful, and self-disciplined learners.",
+    "We cultivate responsible, respectful, and self-disciplined learners."
   },
+
   {
-    icon: FaBookOpen,
-    title: "Diligence",
+    icon: FaFire,
+    title:"Diligence",
     description:
-      "Hard work, determination, and perseverance are at the heart of our success.",
+    "Hard work, determination, and perseverance are at the heart of our success."
   },
+
   {
     icon: FaHandshake,
-    title: "Respect",
+    title:"Respect",
     description:
-      "We foster kindness, integrity, and respect for one another and our community.",
+    "We foster kindness, integrity, and respect for one another and our community."
   },
+
   {
-    icon: FaAward,
-    title: "Excellence",
+    icon: FaStar,
+    title:"Excellence",
     description:
-      "We strive for excellence in academics, leadership, sports, and personal growth.",
-  },
+    "We strive for excellence in academics, leadership, sports, and personal growth."
+  }
+
 ];
