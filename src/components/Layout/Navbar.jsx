@@ -5,7 +5,7 @@ import {
   HiOutlineMenuAlt3,
   HiOutlineX,
 } from "react-icons/hi";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 import logo from "../../assets/images/cohhs-logo.png";
 
@@ -21,12 +21,12 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     };
 
     handleScroll();
@@ -39,150 +39,113 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    document.body.style.overflow = isOpen ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
     };
-  }, [mobileOpen]);
+  }, [isOpen]);
 
-  const closeMobileMenu = () => {
-    setMobileOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
   };
 
   return (
     <>
-      {/* NAVBAR */}
       <header
-        className={`
-          fixed
-          top-0
-          left-0
-          right-0
-          z-50
-          transition-all
-          duration-500
-          ${
-            scrolled
-              ? "bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100"
-              : "bg-white/90 backdrop-blur-md"
-          }
-        `}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "border-b border-gray-200/70 bg-white/95 shadow-sm backdrop-blur-xl"
+            : "bg-[#102A5C]/95 backdrop-blur-md"
+        }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="h-20 lg:h-24 flex items-center justify-between">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+          <div className="flex h-[4.5rem] items-center justify-between">
 
-            {/* LOGO */}
+            {/* BRAND */}
             <Link
               to="/"
-              onClick={closeMobileMenu}
-              className="flex items-center gap-3 shrink-0"
+              onClick={closeMenu}
+              className="flex items-center gap-3"
             >
-              <motion.img
-                src={logo}
-                alt="Corridors Of Hope High School"
-                whileHover={{ scale: 1.04 }}
-                transition={{ duration: 0.2 }}
-                className="
-                  w-14
-                  h-14
-                  lg:w-16
-                  lg:h-16
-                  object-contain
-                "
-              />
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-lg bg-white shadow-sm">
+                <img
+                  src={logo}
+                  alt="Corridors Of Hope High School"
+                  className="h-full w-full object-contain p-1"
+                />
+              </div>
 
-              <div className="hidden sm:block leading-none">
-                <p className="text-[#102A5C] font-extrabold text-sm lg:text-base tracking-tight">
+              <div className="hidden sm:block">
+                <p
+                  className={`text-sm font-extrabold leading-none ${
+                    scrolled ? "text-[#102A5C]" : "text-white"
+                  }`}
+                >
                   Corridors Of Hope
                 </p>
 
-                <p className="text-[#102A5C]/60 text-[10px] lg:text-xs mt-1 tracking-[0.18em] uppercase">
+                <p
+                  className={`mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] ${
+                    scrolled
+                      ? "text-gray-500"
+                      : "text-white/60"
+                  }`}
+                >
                   High School
                 </p>
               </div>
             </Link>
 
-            {/* DESKTOP NAV */}
-            <nav className="hidden xl:flex items-center gap-7">
+            {/* DESKTOP NAVIGATION */}
+            <nav className="hidden items-center gap-1 xl:flex">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
-                  className={({ isActive }) => `
-                    relative
-                    py-2
-                    text-[13px]
-                    font-semibold
-                    transition-colors
-                    duration-300
-                    ${
+                  className={({ isActive }) =>
+                    `relative px-3 py-2 text-[13px] font-semibold transition-all ${
                       isActive
-                        ? "text-[#102A5C]"
-                        : "text-gray-600 hover:text-[#102A5C]"
-                    }
-                  `}
+                        ? scrolled
+                          ? "text-[#102A5C]"
+                          : "text-white"
+                        : scrolled
+                        ? "text-gray-600 hover:text-[#102A5C]"
+                        : "text-white/75 hover:text-white"
+                    }`
+                  }
                 >
                   {({ isActive }) => (
                     <>
                       {link.name}
 
-                      <span
-                        className={`
-                          absolute
-                          -bottom-1
-                          left-0
-                          h-[2px]
-                          bg-[#C9A13B]
-                          rounded-full
-                          transition-all
-                          duration-300
-                          ${
-                            isActive
-                              ? "w-full"
-                              : "w-0"
-                          }
-                        `}
-                      />
+                      {isActive && (
+                        <motion.span
+                          layoutId="navbar-active"
+                          className="absolute bottom-0 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-[#C9A13B]"
+                        />
+                      )}
                     </>
                   )}
                 </NavLink>
               ))}
             </nav>
 
-            {/* CTA */}
-            <div className="hidden xl:flex items-center">
+            {/* DESKTOP CTA */}
+            <div className="hidden xl:block">
               <Link
                 to="/admissions"
-                className="
-                  group
-                  flex
-                  items-center
-                  gap-2
-                  bg-[#102A5C]
-                  hover:bg-[#C9A13B]
-                  text-white
-                  px-5
-                  py-3
-                  rounded-full
-                  text-sm
-                  font-semibold
-                  shadow-md
-                  hover:shadow-xl
-                  transition-all
-                  duration-300
-                "
+                className={`group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-all ${
+                  scrolled
+                    ? "bg-[#102A5C] text-white hover:bg-[#C9A13B]"
+                    : "bg-[#C9A13B] text-white hover:bg-white hover:text-[#102A5C]"
+                }`}
               >
-                Apply for 2026
+                Admissions
 
-                <FiArrowUpRight
-                  size={17}
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-0.5
-                    group-hover:-translate-y-0.5
-                  "
+                <FiArrowRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
                 />
               </Link>
             </div>
@@ -190,30 +153,20 @@ export default function Navbar() {
             {/* MOBILE BUTTON */}
             <button
               type="button"
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => setIsOpen((prev) => !prev)}
               aria-label={
-                mobileOpen
-                  ? "Close navigation menu"
-                  : "Open navigation menu"
+                isOpen ? "Close navigation" : "Open navigation"
               }
-              className="
-                xl:hidden
-                w-11
-                h-11
-                rounded-full
-                bg-[#102A5C]
-                text-white
-                flex
-                items-center
-                justify-center
-                hover:bg-[#C9A13B]
-                transition-colors
-              "
+              className={`flex h-11 w-11 items-center justify-center rounded-xl transition xl:hidden ${
+                scrolled
+                  ? "bg-[#102A5C] text-white"
+                  : "bg-white/10 text-white"
+              }`}
             >
-              {mobileOpen ? (
-                <HiOutlineX size={24} />
+              {isOpen ? (
+                <HiOutlineX size={25} />
               ) : (
-                <HiOutlineMenuAlt3 size={24} />
+                <HiOutlineMenuAlt3 size={25} />
               )}
             </button>
           </div>
@@ -222,25 +175,18 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       <AnimatePresence>
-        {mobileOpen && (
+        {isOpen && (
           <>
-            {/* Backdrop */}
+            {/* BACKDROP */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={closeMobileMenu}
-              className="
-                fixed
-                inset-0
-                z-40
-                bg-[#102A5C]/40
-                backdrop-blur-sm
-                xl:hidden
-              "
+              onClick={closeMenu}
+              className="fixed inset-0 z-40 bg-[#102A5C]/50 backdrop-blur-sm xl:hidden"
             />
 
-            {/* Drawer */}
+            {/* DRAWER */}
             <motion.div
               initial={{
                 opacity: 0,
@@ -257,110 +203,56 @@ export default function Navbar() {
               transition={{
                 duration: 0.25,
               }}
-              className="
-                fixed
-                top-20
-                left-4
-                right-4
-                z-50
-                bg-white
-                rounded-3xl
-                shadow-2xl
-                border
-                border-gray-100
-                p-6
-                xl:hidden
-              "
+              className="fixed inset-x-4 top-20 z-50 max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-2xl border border-gray-200 bg-white shadow-2xl xl:hidden"
             >
-              <nav className="flex flex-col">
+              <div className="p-5">
 
-                {navLinks.map((link, index) => (
-                  <motion.div
-                    key={link.path}
-                    initial={{
-                      opacity: 0,
-                      x: -10,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      delay: index * 0.04,
-                    }}
-                  >
+                <div className="mb-4 border-b border-gray-100 pb-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#C9A13B]">
+                    Navigation
+                  </p>
+
+                  <p className="mt-2 text-sm text-gray-500">
+                    Opening Corridors Of Life
+                  </p>
+                </div>
+
+                <nav className="space-y-1">
+                  {navLinks.map((link) => (
                     <NavLink
+                      key={link.path}
                       to={link.path}
-                      onClick={closeMobileMenu}
-                      className={({ isActive }) => `
-                        flex
-                        items-center
-                        justify-between
-                        py-4
-                        border-b
-                        border-gray-100
-                        font-semibold
-                        transition-colors
-                        ${
+                      onClick={closeMenu}
+                      className={({ isActive }) =>
+                        `flex items-center justify-between rounded-2xl px-4 py-3.5 text-sm font-semibold transition ${
                           isActive
-                            ? "text-[#C9A13B]"
-                            : "text-[#102A5C] hover:text-[#C9A13B]"
-                        }
-                      `}
+                            ? "bg-[#102A5C] text-white"
+                            : "text-gray-700 hover:bg-gray-50 hover:text-[#102A5C]"
+                        }`
+                      }
                     >
                       {({ isActive }) => (
                         <>
                           <span>{link.name}</span>
 
                           {isActive && (
-                            <span className="w-2 h-2 rounded-full bg-[#C9A13B]" />
+                            <span className="h-2 w-2 rounded-full bg-[#C9A13B]" />
                           )}
                         </>
                       )}
                     </NavLink>
-                  </motion.div>
-                ))}
+                  ))}
+                </nav>
 
-              </nav>
-
-              {/* Mobile CTA */}
-              <Link
-                to="/admissions"
-                onClick={closeMobileMenu}
-                className="
-                  mt-6
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  w-full
-                  bg-[#102A5C]
-                  hover:bg-[#C9A13B]
-                  text-white
-                  py-4
-                  rounded-2xl
-                  font-semibold
-                  transition-colors
-                "
-              >
-                Apply for 2026
-
-                <FiArrowUpRight size={18} />
-              </Link>
-
-              {/* Motto */}
-              <p
-                className="
-                  mt-6
-                  text-center
-                  text-[10px]
-                  uppercase
-                  tracking-[0.25em]
-                  text-gray-400
-                "
-              >
-                Opening Corridors Of Life
-              </p>
+                <Link
+                  to="/admissions"
+                  onClick={closeMenu}
+                  className="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-[#C9A13B] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#102A5C]"
+                >
+                  Admissions Enquiries
+                  <FiArrowRight size={17} />
+                </Link>
+              </div>
             </motion.div>
           </>
         )}

@@ -1,113 +1,13 @@
 import { motion } from "framer-motion";
 
-import SectionTitle from "../components/ui/SectionTitle";
-import Card from "../components/ui/Card";
-
-const testimonials = [
-  {
-    name: "Parent of a Student",
-    role: "Parent",
-    message:
-      "Corridors Of Hope has provided my child with excellent education, discipline and a supportive learning environment.",
-  },
-
-  {
-    name: "Former Student",
-    role: "Alumni",
-    message:
-      "The school shaped my character, confidence and prepared me for future opportunities.",
-  },
-
-  {
-    name: "Current Student",
-    role: "Learner",
-    message:
-      "The teachers encourage us to work hard, discover our talents and become better every day.",
-  },
-];
-
-
 export default function Testimonials() {
   return (
-
-    <section className="py-28 bg-slate-50">
-
-      <div className="max-w-7xl mx-auto px-6">
-
-
-        <SectionTitle
-          center
-          eyebrow="Testimonials"
-          title="What Our Community Says"
-          subtitle="Hear from parents, students and alumni about their experience at Corridors Of Hope."
-        />
-
-
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
-
-
-          {testimonials.map((item,index)=>(
-
-            <motion.div
-
-              key={item.name}
-
-              initial={{
-                opacity:0,
-                y:40
-              }}
-
-              whileInView={{
-                opacity:1,
-                y:0
-              }}
-
-              viewport={{
-                once:true
-              }}
-
-              transition={{
-                delay:index*.15
-              }}
-
-            >
-
-              <Card className="h-full">
-
-
-                <p className="text-gray-600 leading-8 italic">
-                  "{item.message}"
-                </p>
-
-
-                <div className="mt-8">
-
-                  <h3 className="font-bold text-[#102A5C]">
-                    {item.name}
-                  </h3>
-
-                  <p className="text-sm text-[#C9A13B]">
-                    {item.role}
-                  </p>
-
-                </div>
-
-
-              </Card>
-
-
-            </motion.div>
-
-          ))}
-
-
-        </div>
-
-
-      </div>
-
-
+    <section className="bg-slate-50 py-20 lg:py-24">
+      <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-4xl px-6 text-center">
+        <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#C9A13B]">Our commitment</p>
+        <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#102A5C] sm:text-4xl">A place to learn, contribute and lead.</h2>
+        <p className="mx-auto mt-5 max-w-2xl leading-8 text-slate-600">We believe a strong school community gives young people room to develop their knowledge, confidence and sense of responsibility.</p>
+      </motion.div>
     </section>
-
   );
 }

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
+import principalImage from "../assets/images/principal.jpg";
 
 export default function Welcome() {
   return (
@@ -38,7 +39,7 @@ export default function Welcome() {
           <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
 
             <img
-              src="/images/principal.jpg"
+              src={principalImage}
               alt="Principal of Corridors Of Hope High School"
               className="
                 h-[480px]

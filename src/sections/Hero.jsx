@@ -1,19 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiPlay } from "react-icons/fi";
 
 import heroImage from "../assets/images/hero.png";
 
 export default function Hero() {
+  const reduceMotion = useReducedMotion();
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#102A5C]">
 
       {/* Background */}
       <motion.div
         initial={{ scale: 1.04 }}
-        animate={{ scale: 1.1 }}
+        animate={reduceMotion ? undefined : { scale: 1.08 }}
         transition={{
-          duration: 22,
+          duration: 28,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "easeInOut",
@@ -71,7 +72,7 @@ export default function Hero() {
               tracking-tight
               text-white
               sm:text-6xl
-              lg:text-8xl
+              lg:text-7xl
             "
           >
             Excellence In
@@ -142,7 +143,7 @@ export default function Hero() {
                 hover:bg-[#b88d22]
               "
             >
-              Admissions Open
+              Enquire About Admission
 
               <FiArrowRight
                 className="transition-transform duration-300 group-hover:translate-x-1"

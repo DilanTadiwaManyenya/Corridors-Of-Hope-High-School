@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { stats } from "../data/stats";
+
+const pillars = ["Academic focus", "Character formation", "Student leadership", "Community spirit"];
 
 export default function Statistics() {
 
   return (
-    <section className="py-24 bg-[#F8F7F3]">
+    <section className="border-y border-slate-200 bg-[#F8F7F3] py-20 lg:py-24">
 
       <div className="
         max-w-7xl
@@ -24,7 +25,7 @@ export default function Statistics() {
             font-semibold
             text-sm
           ">
-            Our Impact
+            The Corridors Difference
           </p>
 
 
@@ -35,7 +36,7 @@ export default function Statistics() {
             font-bold
             text-[#102A5C]
           ">
-            Numbers That Tell Our Story
+            An education shaped by purpose
           </h2>
 
 
@@ -44,8 +45,7 @@ export default function Statistics() {
             text-gray-600
             text-lg
           ">
-            Every achievement reflects our commitment to nurturing
-            excellence, discipline, character, and future leaders.
+            Corridors Of Hope brings learning, discipline and opportunity together in an environment where learners can grow with confidence.
           </p>
 
         </div>
@@ -63,11 +63,11 @@ export default function Statistics() {
         ">
 
 
-          {stats.map((item,index)=>(
+          {pillars.map((item,index)=>(
 
             <motion.div
 
-              key={item.label}
+              key={item}
 
               initial={{
                 opacity:0,
@@ -88,37 +88,27 @@ export default function Statistics() {
               }}
 
               className="
-                bg-white
-                rounded-3xl
-                p-8
+                border-t-2 border-[#C9A13B]
+                bg-transparent
+                p-6 sm:p-8
                 text-center
-                shadow-lg
-                hover:-translate-y-3
-                transition
-                duration-300
               "
 
             >
 
               <h3 className="
-                text-4xl
-                md:text-5xl
-                font-extrabold
+                text-lg
+                font-bold
                 text-[#102A5C]
               ">
-                {item.number}
-                <span className="text-[#C9A13B]">
-                  {item.suffix}
-                </span>
+                {String(index + 1).padStart(2, "0")}
               </h3>
 
 
               <p className="
-                mt-4
-                text-gray-600
-                font-medium
+                mt-3 text-sm font-medium text-slate-600
               ">
-                {item.label}
+                {item}
               </p>
 
 
