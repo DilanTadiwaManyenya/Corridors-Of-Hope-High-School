@@ -84,7 +84,7 @@ export default function Admissions() {
                 to="/contact"
                 className="inline-flex items-center gap-3 rounded-full border border-white/30 px-8 py-4 font-semibold text-white transition hover:border-white hover:bg-white hover:text-[#102A5C]"
               >
-                Contact School
+                Book a School Tour
               </Link>
             </div>
           </motion.div>

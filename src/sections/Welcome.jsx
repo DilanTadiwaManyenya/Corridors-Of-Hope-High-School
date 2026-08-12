@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
-import principalImage from "../assets/images/principal.jpg";
+import { FiArrowRight } from "react-icons/fi";
+// Keep the extension casing aligned with the Git-tracked asset. Vercel builds on Linux.
+import principalImage from "../assets/images/principal.JPG";
 
 export default function Welcome() {
   return (
@@ -10,7 +11,7 @@ export default function Welcome() {
       {/* Decorative background */}
       <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:px-8">
 
         {/* IMAGE SIDE */}
         <motion.div
@@ -21,60 +22,30 @@ export default function Welcome() {
           className="relative"
         >
 
-          {/* Gold frame */}
-          <div className="
-            absolute
-            -left-5
-            -top-5
-            hidden
-            h-full
-            w-full
-            rounded-[2rem]
-            border-2
-            border-[#C9A13B]
-            lg:block
-          " />
+          <div className="absolute -left-4 -top-4 hidden h-full w-full border-l-2 border-t-2 border-[#C9A13B] lg:block" />
 
           {/* Image */}
-          <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
+          <div className="relative overflow-hidden bg-[#102A5C] shadow-[0_24px_60px_rgba(16,42,92,0.16)]">
 
             <img
               src={principalImage}
               alt="Principal of Corridors Of Hope High School"
               className="
-                h-[480px]
+                h-[460px]
                 w-full
                 object-cover
+                object-[center_20%]
                 transition-transform
                 duration-700
                 hover:scale-105
-                lg:h-[580px]
+                lg:h-[620px]
               "
             />
 
             {/* Image overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#102A5C]/80 via-transparent to-transparent" />
 
-            {/* Principal label */}
-            <div className="absolute bottom-6 left-6 right-6">
-
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-md">
-
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#C9A13B]">
-                  Leadership
-                </p>
-
-                <p className="mt-1 text-lg font-bold text-white">
-                  Principal
-                </p>
-
-                <p className="mt-1 text-sm text-white/70">
-                  Corridors Of Hope High School
-                </p>
-
-              </div>
-
-            </div>
+            <p className="absolute bottom-6 left-6 text-xs font-bold uppercase tracking-[0.25em] text-white/90">School leadership</p>
 
           </div>
         </motion.div>
@@ -98,22 +69,10 @@ export default function Welcome() {
 
           </div>
 
-          {/* Heading */}
-          <h2 className="
-            mt-6
-            text-4xl
-            font-extrabold
-            leading-tight
-            tracking-tight
-            text-[#102A5C]
-            sm:text-5xl
-            lg:text-6xl
-          ">
-            A Message From
-            <span className="block text-[#C9A13B]">
-              The Principal
-            </span>
-          </h2>
+          <div className="relative mt-6">
+            <span aria-hidden="true" className="absolute -left-3 -top-8 font-serif text-7xl leading-none text-[#C9A13B]/30 sm:-left-7 sm:text-8xl">“</span>
+            <h2 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-[#102A5C] sm:text-5xl lg:text-6xl">A Message From<br />The Principal</h2>
+          </div>
 
           {/* Main paragraph */}
           <p className="
@@ -139,89 +98,9 @@ export default function Welcome() {
             student to discover their potential.
           </p>
 
-          {/* Values */}
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-
-            <div className="flex items-center gap-3">
-              <span className="
-                flex
-                h-8
-                w-8
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-[#102A5C]
-                text-white
-              ">
-                <FiCheck size={15} />
-              </span>
-
-              <span className="text-sm font-semibold text-[#102A5C]">
-                Academic Excellence
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="
-                flex
-                h-8
-                w-8
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-[#102A5C]
-                text-white
-              ">
-                <FiCheck size={15} />
-              </span>
-
-              <span className="text-sm font-semibold text-[#102A5C]">
-                Character Development
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="
-                flex
-                h-8
-                w-8
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-[#102A5C]
-                text-white
-              ">
-                <FiCheck size={15} />
-              </span>
-
-              <span className="text-sm font-semibold text-[#102A5C]">
-                Leadership Development
-              </span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <span className="
-                flex
-                h-8
-                w-8
-                shrink-0
-                items-center
-                justify-center
-                rounded-full
-                bg-[#102A5C]
-                text-white
-              ">
-                <FiCheck size={15} />
-              </span>
-
-              <span className="text-sm font-semibold text-[#102A5C]">
-                Christian Values
-              </span>
-            </div>
-
+          <div className="mt-8 flex items-center gap-3 text-sm font-semibold text-[#102A5C]">
+            <span className="h-px w-10 bg-[#C9A13B]" />
+            Education with purpose
           </div>
 
           {/* CTA */}
@@ -239,10 +118,8 @@ export default function Welcome() {
               py-4
               font-semibold
               text-white
-              shadow-lg
               transition-all
               duration-300
-              hover:-translate-y-1
               hover:bg-[#C9A13B]
             "
           >
