@@ -14,25 +14,30 @@ import {
 import studentLifeImage from "../assets/images/student-life.jpg";
 import sportsImage from "../assets/images/sports.jpg";
 import studentsImage from "../assets/images/students.jpg";
+import artsandculture from "../assets/images/science-lab.jpg";
+import more from "../assets/images/gallery-4.jpg";
+import studentledearship from "../assets/images/student-leadership.jpg";
+import communityservice from "../assets/images/community-service.jpg";
+import studentlearning from "../assets/images/students-learning.jpg";
 
 const activities = [
   {
     icon: FiActivity,
     title: "Sports Excellence",
     text: "Sport provides learners with opportunities to develop teamwork, discipline, resilience and confidence while discovering their talents.",
-    image: sportsImage,
+    image: more,
   },
   {
     icon: FiMusic,
     title: "Arts & Culture",
     text: "Music, drama, dance and creative activities give students space to express themselves and develop their creativity.",
-    image: studentLifeImage,
+    image: artsandculture,
   },
   {
     icon: FiUsers,
     title: "Student Leadership",
     text: "Leadership opportunities help learners develop responsibility, communication skills, confidence and sound decision-making.",
-    image: studentsImage,
+    image: studentledearship,
   },
   {
     icon: FiCpu,
@@ -44,13 +49,13 @@ const activities = [
     icon: FiAward,
     title: "Competitions",
     text: "Academic, sporting and creative competitions encourage learners to challenge themselves and celebrate achievement.",
-    image: sportsImage,
+    image: studentlearning,
   },
   {
     icon: FiHeart,
     title: "Community Service",
     text: "Service activities encourage compassion, teamwork and a sense of responsibility towards others and the wider community.",
-    image: studentsImage,
+    image: communityservice,
   },
 ];
 
@@ -64,11 +69,12 @@ export default function StudentLife() {
           <img
             src={studentLifeImage}
             alt=""
-            className="h-full w-full object-cover opacity-25"
+            className="h-full w-full object-cover object-center opacity-55"
           />
 
-          <div className="absolute inset-0 bg-[#102A5C]/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/72 to-[#102A5C]/35" />
         </div>
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 

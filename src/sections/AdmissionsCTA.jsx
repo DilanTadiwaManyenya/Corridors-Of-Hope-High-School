@@ -15,7 +15,7 @@ export default function Admissions() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#102A5C] py-24 lg:py-32">
+    <section className="relative overflow-hidden border-t border-[#C9A13B]/40 bg-[#0B2049] py-24 lg:py-32">
       {/* Decorative shapes */}
       <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 

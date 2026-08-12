@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiBookOpen } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import studentsImage from "../assets/images/students-learning.jpg";
 import scienceImage from "../assets/images/science-lab.jpg";
@@ -241,8 +242,8 @@ export default function Academics() {
             </h3>
           </div>
 
-          <a
-            href="/academics"
+          <Link
+            to="/academics"
             className="
               inline-flex
               items-center
@@ -259,7 +260,7 @@ export default function Academics() {
           >
             Explore Academics
             <FiArrowUpRight size={18} />
-          </a>
+          </Link>
         </motion.div>
 
       </div>

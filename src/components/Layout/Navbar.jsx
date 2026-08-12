@@ -134,14 +134,14 @@ export default function Navbar() {
             {/* DESKTOP CTA */}
             <div className="hidden xl:block">
               <Link
-                to="/admissions"
+                to="/contact"
                 className={`group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition-all ${
                   scrolled
-                    ? "bg-[#102A5C] text-white hover:bg-[#C9A13B]"
-                    : "bg-[#C9A13B] text-white hover:bg-white hover:text-[#102A5C]"
+                    ? "bg-[#102A5C] text-white hover:bg-[#C7372F]"
+                    : "bg-[#C7372F] text-white hover:bg-white hover:text-[#102A5C]"
                 }`}
               >
-                Admissions
+                Inquiry
 
                 <FiArrowRight
                   size={16}
@@ -245,11 +245,11 @@ export default function Navbar() {
                 </nav>
 
                 <Link
-                  to="/admissions"
+                  to="/contact"
                   onClick={closeMenu}
-                  className="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-[#C9A13B] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#102A5C]"
+                  className="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-[#C7372F] px-5 py-4 text-sm font-bold text-white transition hover:bg-[#102A5C]"
                 >
-                  Admissions Enquiries
+                  Make an Inquiry
                   <FiArrowRight size={17} />
                 </Link>
               </div>

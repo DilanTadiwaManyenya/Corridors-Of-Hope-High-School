@@ -2,14 +2,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiX, FiMaximize2 } from "react-icons/fi";
 
-import gallery1 from "../assets/images/gallery-1.jpg";
-import gallery2 from "../assets/images/gallery-2.jpg";
+import gallery1 from "../assets/images/campus.jpg";
+import gallery2 from "../assets/images/student-leadership.jpg";
 import gallery3 from "../assets/images/gallery-3.jpg";
-import gallery4 from "../assets/images/gallery-4.jpg";
+import gallery4 from "../assets/images/gallery-2.jpg";
 import gallery5 from "../assets/images/gallery-5.jpg";
-import gallery6 from "../assets/images/gallery-6.jpg";
-import gallery7 from "../assets/images/gallery-7.jpg";
+import gallery6 from "../assets/images/computer-lab.jpg";
+import gallery7 from "../assets/images/community-service.jpg";
 import gallery8 from "../assets/images/gallery-8.jpg";
+import galleryhero from "../assets/images/arts-culture.jpg";
 
 const images = [
   {
@@ -79,8 +80,9 @@ export default function Gallery() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
-
-        <div className="absolute inset-0 bg-gradient-to-br from-[#102A5C] via-[#102A5C] to-[#07152F]" />
+        <img src={galleryhero} alt="School event at Corridors Of Hope High School" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/72 to-[#102A5C]/35" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 

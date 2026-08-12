@@ -7,8 +7,9 @@ import {
   FiBookOpen,
 } from "react-icons/fi";
 
-import schoolImage from "../assets/images/campus.jpg";
+import schoolImage from "../assets/images/gallery-2.jpg";
 import studentsImage from "../assets/images/students-learning.jpg";
+import PageHero from "../components/shared/PageHero";
 
 const values = [
   {
@@ -37,48 +38,7 @@ export default function About() {
   return (
     <main className="bg-white">
 
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
-        <div className="absolute inset-0">
-          <img
-            src={schoolImage}
-            alt="Corridors Of Hope High School campus"
-            className="h-full w-full object-cover opacity-25"
-          />
-
-          <div className="absolute inset-0 bg-[#102A5C]/85" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-4xl"
-          >
-            <div className="flex items-center gap-4">
-              <span className="h-px w-12 bg-[#C9A13B]" />
-
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C9A13B]">
-                About Corridors Of Hope
-              </span>
-            </div>
-
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl">
-              Opening Corridors
-              <span className="block text-[#C9A13B]">
-                Of Life.
-              </span>
-            </h1>
-
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75">
-              A learning community committed to academic excellence,
-              discipline, character development, Christian values and the
-              preparation of future leaders.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero eyebrow="About Corridors Of Hope" title="Opening Corridors" highlight="Of Life." description="A learning community committed to academic excellence, discipline, character development, Christian values and the preparation of future leaders." image={schoolImage} imageAlt="Corridors Of Hope High School campus" imagePosition="center" />
 
       {/* OUR STORY */}
       <section className="py-24 lg:py-32">

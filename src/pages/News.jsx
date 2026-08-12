@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiArrowRight, FiCalendar, FiClock } from "react-icons/fi";
+import eventImage from "../assets/images/school-event.JPG";
 
 const news = [
   {
@@ -59,8 +60,9 @@ export default function News() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
-
-        <div className="absolute inset-0 bg-gradient-to-br from-[#102A5C] via-[#102A5C] to-[#07152F]" />
+        <img src={eventImage} alt="School event at Corridors Of Hope High School" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/72 to-[#102A5C]/35" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
 
         <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 

@@ -7,6 +7,7 @@ import {
   FiClock,
   FiSend,
 } from "react-icons/fi";
+import campusImage from "../assets/images/campus.jpg";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,8 +16,9 @@ export default function Contact() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
-
-        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#C9A13B]/10 blur-3xl" />
+        <img src={campusImage} alt="Corridors Of Hope High School campus" className="absolute inset-0 h-full w-full object-cover object-center opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/72 to-[#102A5C]/35" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 

@@ -8,6 +8,7 @@ import {
   FiCalendar,
   FiPhone,
 } from "react-icons/fi";
+import studentsImage from "../assets/images/community-service.jpg";
 
 const steps = [
   {
@@ -55,6 +56,9 @@ export default function Admissions() {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
+        <img src={studentsImage} alt="Students at Corridors Of Hope High School" className="absolute inset-0 h-full w-full object-cover object-center opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/70 to-[#102A5C]/40" />
+        <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
         <div className="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#C9A13B]/10 blur-3xl" />
 
         <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-white/5 blur-3xl" />

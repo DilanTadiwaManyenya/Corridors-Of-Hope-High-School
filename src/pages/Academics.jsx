@@ -4,6 +4,8 @@ import { FiArrowRight, FiBookOpen, FiCheckCircle } from "react-icons/fi";
 import studentsImage from "../assets/images/students-learning.jpg";
 import scienceImage from "../assets/images/science-lab.jpg";
 import computerImage from "../assets/images/computer-lab.jpg";
+import PageHero from "../components/shared/PageHero";
+import ClassroomImage from "../assets/images/classroom.jpg";
 
 const subjects = [
   {
@@ -46,6 +48,8 @@ export default function Academics() {
     <main className="bg-white">
 
       {/* HERO */}
+      <PageHero eyebrow="Academic Excellence" title="Preparing Students" highlight="For The Future." description="Our curriculum equips learners with knowledge, creativity, leadership and critical thinking for higher education and life." image={ClassroomImage} imageAlt="Classroom learning at Corridors Of Hope High School" imagePosition="center" />
+      {/*
       <section className="relative overflow-hidden bg-[#102A5C] py-28 lg:py-36">
         <div className="absolute inset-0">
           <img
@@ -86,7 +90,7 @@ export default function Academics() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* INTRODUCTION */}
       <section className="py-24 lg:py-32">

@@ -1,18 +1,15 @@
 import { Link } from "react-router-dom";
-import { FiArrowRight } from "react-icons/fi";
 import logo from "../../assets/images/cohhs-logo.png";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 bg-[#102A5C] text-white">
+    <footer className="border-t-8 border-[#F8F7F4] bg-[#071A3D] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.3fr_0.7fr_1fr] lg:px-8">
         <div>
           <img src={logo} alt="Corridors Of Hope High School" className="mb-5 w-16" />
           <h2 className="text-xl font-bold">Corridors Of Hope</h2>
           <p className="mt-4 max-w-sm leading-7 text-white/70">Opening Corridors Of Life through academic excellence, discipline, character development and Christian values.</p>
-          <Link to="/admissions" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#C9A13B] transition hover:text-white">
-            Begin an enquiry <FiArrowRight />
-          </Link>
+          <p className="mt-5 text-sm font-semibold text-[#C9A13B]">Harare, Zimbabwe</p>
         </div>
 
         <div>
