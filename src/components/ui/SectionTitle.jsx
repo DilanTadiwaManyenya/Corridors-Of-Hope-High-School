@@ -15,17 +15,17 @@ export default function SectionTitle({
       className={center ? "text-center" : ""}
     >
       {eyebrow && (
-        <span className="text-[#C9A13B] uppercase tracking-[4px] font-semibold">
+        <span className="text-xs font-bold uppercase tracking-[0.24em] text-[#C7372F]">
           {eyebrow}
         </span>
       )}
 
-      <h2 className="mt-3 text-4xl lg:text-5xl font-bold text-[#102A5C]">
+      <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-[#102A5C] lg:text-5xl">
         {title}
       </h2>
 
       {subtitle && (
-        <p className="mt-5 text-gray-600 max-w-3xl leading-8">
+        <p className={`mt-5 max-w-3xl leading-8 text-gray-600 ${center ? "mx-auto" : ""}`}>
           {subtitle}
         </p>
       )}

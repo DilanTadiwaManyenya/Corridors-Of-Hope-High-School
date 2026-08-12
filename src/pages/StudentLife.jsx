@@ -12,7 +12,6 @@ import {
 } from "react-icons/fi";
 
 import studentLifeImage from "../assets/images/student-life.jpg";
-import sportsImage from "../assets/images/sports.jpg";
 import studentsImage from "../assets/images/students.jpg";
 import artsandculture from "../assets/images/science-lab.jpg";
 import more from "../assets/images/gallery-4.jpg";
@@ -253,21 +252,21 @@ export default function StudentLife() {
       </section>
 
       {/* CLOSING CTA */}
-      <section className="bg-[#102A5C] py-24 lg:py-28">
+      <section className="border-t border-[#C9A13B]/35 bg-[#F8F7F4] py-24 lg:py-28">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
 
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C9A13B]">
+          <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C7372F]">
             Student Experience
           </span>
 
-          <h2 className="mt-5 text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="mt-5 text-4xl font-extrabold text-[#102A5C] sm:text-5xl">
             Helping learners become
-            <span className="text-[#C9A13B]">
+            <span className="text-[#C7372F]">
               {" "}confident future leaders.
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl leading-8 text-white/65">
+          <p className="mx-auto mt-6 max-w-2xl leading-8 text-slate-600">
             At Corridors Of Hope, every experience is an opportunity to learn,
             grow and discover what is possible.
           </p>
@@ -275,7 +274,7 @@ export default function StudentLife() {
           <div className="mt-9">
             <Link
               to="/admissions"
-              className="inline-flex items-center gap-3 rounded-full bg-[#C9A13B] px-8 py-4 font-semibold text-white transition hover:bg-[#B88D22]"
+              className="inline-flex items-center gap-3 rounded-full bg-[#102A5C] px-8 py-4 font-semibold text-white transition hover:bg-[#C7372F]"
             >
               Explore Admissions
               <FiArrowRight size={18} />

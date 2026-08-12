@@ -50,7 +50,7 @@ export default function Hero() {
           >
             <span className="h-px w-12 bg-[#C9A13B]" />
 
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#C9A13B] sm:text-sm">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#C9A13B] sm:text-sm">
               Opening Corridors Of Life
             </p>
           </motion.div>

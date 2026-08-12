@@ -296,18 +296,18 @@ export default function Admissions() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="bg-[#102A5C] py-20">
+      <section className="border-t border-[#C9A13B]/35 bg-[#F8F7F4] py-20">
         <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
 
-          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#C9A13B]">
+          <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#C7372F]">
             Corridors Of Hope High School
           </p>
 
-          <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-extrabold text-[#102A5C] sm:text-4xl">
             Opening Corridors Of Life.
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-white/60">
+          <p className="mx-auto mt-4 max-w-2xl text-slate-600">
             Academic excellence. Character. Leadership. Opportunity.
           </p>
 
