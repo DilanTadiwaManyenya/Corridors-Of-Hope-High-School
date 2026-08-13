@@ -6,12 +6,12 @@ import principalImage from "../assets/images/principal.JPG";
 
 export default function Welcome() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F7F4] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-[#F8F7F4] py-14 lg:py-20">
 
       {/* Decorative background */}
       <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12 lg:px-8">
 
         {/* IMAGE SIDE */}
         <motion.div
@@ -31,14 +31,14 @@ export default function Welcome() {
               src={principalImage}
               alt="Principal of Corridors Of Hope High School"
               className="
-                h-[460px]
+                h-[340px]
                 w-full
                 object-cover
                 object-[center_20%]
                 transition-transform
                 duration-700
                 hover:scale-105
-                lg:h-[620px]
+                lg:h-[480px]
               "
             />
 

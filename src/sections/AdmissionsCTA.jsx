@@ -15,7 +15,7 @@ export default function Admissions() {
   ];
 
   return (
-    <section className="relative overflow-hidden border-t border-[#C9A13B]/40 bg-[#0B2049] py-24 lg:py-32">
+    <section className="relative overflow-hidden border-t border-[#C9A13B]/40 bg-[#0B2049] py-16 lg:py-20">
       {/* Decorative shapes */}
       <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#C9A13B]/10 blur-3xl" />
 
@@ -23,7 +23,7 @@ export default function Admissions() {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
 
-        <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
 
           {/* LEFT */}
           <motion.div
@@ -74,7 +74,7 @@ export default function Admissions() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/admissions"
-                className="inline-flex items-center gap-3 rounded-full bg-[#C9A13B] px-8 py-4 font-semibold text-white transition hover:bg-[#B88D22]"
+                className="inline-flex items-center gap-3 rounded-full bg-[#C9A13B] px-8 py-4 font-bold text-[#102A5C] shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:bg-[#E0BC5C] focus-visible:outline-white"
               >
                 Apply Now
                 <FiArrowRight size={18} />
@@ -82,7 +82,7 @@ export default function Admissions() {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-3 rounded-full border border-white/30 px-8 py-4 font-semibold text-white transition hover:border-white hover:bg-white hover:text-[#102A5C]"
+                className="inline-flex items-center gap-3 rounded-full border border-white/40 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-[#C9A13B] hover:bg-white/10"
               >
                 Book a School Tour
               </Link>
@@ -121,7 +121,7 @@ export default function Admissions() {
                 to="/admissions"
                 className="mt-7 inline-flex items-center gap-2 font-bold text-[#102A5C] transition hover:text-[#C9A13B]"
               >
-                View Admissions
+                View admissions details
                 <FiArrowRight size={18} />
               </Link>
 

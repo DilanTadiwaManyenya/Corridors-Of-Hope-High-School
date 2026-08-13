@@ -4,7 +4,7 @@ import { values } from "../data/values";
 export default function CoreValues() {
 
   return (
-    <section className="py-24 bg-white">
+    <section className="bg-white py-14 lg:py-20">
 
       <div className="max-w-7xl mx-auto px-6">
 

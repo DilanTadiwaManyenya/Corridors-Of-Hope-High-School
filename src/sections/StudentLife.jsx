@@ -47,11 +47,11 @@ const activities = [
 
 export default function StudentLife() {
   return (
-    <section className="overflow-hidden bg-white py-24 lg:py-32">
+    <section className="overflow-hidden bg-white py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* HEADER */}
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -100,7 +100,7 @@ export default function StudentLife() {
           <img
             src={studentLifeImage}
             alt="Student life at Corridors Of Hope High School"
-            className="h-[420px] w-full object-cover transition duration-700 hover:scale-105 lg:h-[520px]"
+            className="h-[320px] w-full object-cover transition duration-700 hover:scale-105 lg:h-[420px]"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#102A5C]/90 via-[#102A5C]/20 to-transparent" />
@@ -152,7 +152,13 @@ export default function StudentLife() {
                   {activity.text}
                 </p>
 
-                <div className="mt-6 h-1 w-8 rounded-full bg-[#C9A13B] transition-all duration-300 group-hover:w-16" />
+                <Link
+                  to="/student-life"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[#102A5C] transition group-hover:text-[#C9A13B]"
+                >
+                  Learn more
+                  <FiArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                </Link>
               </motion.article>
             );
           })}

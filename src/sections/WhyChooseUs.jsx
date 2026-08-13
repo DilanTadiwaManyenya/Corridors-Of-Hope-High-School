@@ -49,7 +49,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative overflow-hidden bg-[#102A5C] py-24 lg:py-32">
+    <section className="relative overflow-hidden bg-[#102A5C] py-14 lg:py-20">
 
       {/* Background decoration */}
       <div className="absolute -right-40 top-20 h-96 w-96 rounded-full bg-[#C9A13B]/10 blur-3xl" />
@@ -114,7 +114,7 @@ export default function WhyChooseUs() {
                   className={`
                     relative
                     overflow-hidden
-                    ${feature.large ? "h-[460px] lg:h-full lg:min-h-[560px]" : "h-56"}
+                    ${feature.large ? "h-[340px] lg:h-full lg:min-h-[440px]" : "h-52"}
                   `}
                 >
 

@@ -41,8 +41,8 @@ export default function About() {
       <PageHero eyebrow="About Corridors Of Hope" title="Opening Corridors" highlight="Of Life." description="A learning community committed to academic excellence, discipline, character development, Christian values and the preparation of future leaders." image={schoolImage} imageAlt="Corridors Of Hope High School campus" imagePosition="center" />
 
       {/* OUR STORY */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+      <section className="py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:items-center lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -90,7 +90,7 @@ export default function About() {
             <img
               src={studentsImage}
               alt="Students at Corridors Of Hope High School"
-              className="h-[480px] w-full rounded-[2rem] object-cover shadow-2xl"
+              className="h-[360px] w-full rounded-[2rem] object-cover shadow-2xl lg:h-[420px]"
             />
 
             <div className="absolute -bottom-7 -left-7 hidden rounded-2xl bg-[#C9A13B] p-7 shadow-xl sm:block">
@@ -110,7 +110,7 @@ export default function About() {
       </section>
 
       {/* VALUES */}
-      <section className="bg-[#F8F7F4] py-24 lg:py-32">
+      <section className="bg-[#F8F7F4] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div className="max-w-3xl">
@@ -169,7 +169,7 @@ export default function About() {
       </section>
 
       {/* MISSION */}
-      <section className="bg-[#102A5C] py-24 lg:py-32">
+      <section className="bg-[#102A5C] py-16 lg:py-20">
         <div className="mx-auto max-w-5xl px-6 text-center lg:px-8">
 
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C9A13B]">
@@ -193,7 +193,7 @@ export default function About() {
       </section>
 
       {/* CTA */}
-      <section className="py-24">
+      <section className="py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="rounded-[2rem] bg-[#F8F7F4] p-8 text-center sm:p-12 lg:p-16">
 

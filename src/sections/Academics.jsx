@@ -39,7 +39,7 @@ const subjects = [
 
 export default function Academics() {
   return (
-    <section className="bg-[#F8F7F4] py-24 lg:py-32">
+    <section className="bg-[#F8F7F4] py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Header */}
@@ -48,7 +48,7 @@ export default function Academics() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="grid gap-10 lg:grid-cols-[1fr_420px] lg:items-end"
+          className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-end"
         >
           <div>
             <div className="flex items-center gap-4">
@@ -89,7 +89,7 @@ export default function Academics() {
               className="
                 group
                 relative
-                min-h-[380px]
+                min-h-[320px]
                 overflow-hidden
                 rounded-[2rem]
                 bg-[#102A5C]

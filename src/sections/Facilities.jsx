@@ -55,7 +55,7 @@ const facilities = [
 
 export default function Facilities() {
   return (
-    <section className="bg-[#F8F7F4] py-24 lg:py-32">
+    <section className="bg-[#F8F7F4] py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Heading */}

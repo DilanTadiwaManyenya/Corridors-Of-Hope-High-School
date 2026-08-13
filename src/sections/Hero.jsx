@@ -7,7 +7,7 @@ import heroImage from "../assets/images/hero.png";
 export default function Hero() {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#102A5C]">
+    <section className="relative min-h-[38rem] overflow-hidden bg-[#102A5C] lg:min-h-[40rem]">
 
       {/* Background */}
       <motion.div
@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="absolute -right-32 top-1/4 h-96 w-96 rounded-full bg-[#C9A13B]/20 blur-3xl" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pb-20 pt-32 lg:px-8">
+      <div className="relative z-10 mx-auto flex min-h-[38rem] max-w-7xl items-center px-6 pb-14 pt-24 lg:min-h-[40rem] lg:px-8">
 
         <div className="max-w-4xl">
 
@@ -64,7 +64,7 @@ export default function Hero() {
               delay: 0.15,
             }}
             className="
-              mt-7
+              mt-6
               max-w-4xl
               text-5xl
               font-extrabold
@@ -72,7 +72,7 @@ export default function Hero() {
               tracking-tight
               text-white
               sm:text-6xl
-              lg:text-7xl
+              lg:text-6xl
             "
           >
             Excellence In
@@ -98,7 +98,7 @@ export default function Hero() {
               delay: 0.35,
             }}
             className="
-              mt-8
+              mt-6
               max-w-2xl
               text-base
               leading-8
@@ -119,7 +119,7 @@ export default function Hero() {
               duration: 0.8,
               delay: 0.5,
             }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            className="mt-8 flex flex-col gap-4 sm:flex-row"
           >
 
             <Link
@@ -188,7 +188,7 @@ export default function Hero() {
               duration: 1,
               delay: 0.8,
             }}
-            className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-white/70"
+            className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/70"
           >
             <span>Academic Excellence</span>
 

@@ -5,7 +5,7 @@ const pillars = ["Academic focus", "Character formation", "Student leadership", 
 export default function Statistics() {
 
   return (
-    <section className="border-y border-slate-200 bg-[#F8F7F3] py-20 lg:py-24">
+    <section className="border-y border-slate-200 bg-[#F8F7F3] py-12 lg:py-16">
 
       <div className="
         max-w-7xl

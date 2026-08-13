@@ -63,7 +63,7 @@ export default function StudentLife() {
     <main className="bg-white">
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
+      <section className="relative overflow-hidden bg-[#102A5C] py-20 lg:py-28">
         <div className="absolute inset-0">
           <img
             src={studentLifeImage}
@@ -91,7 +91,7 @@ export default function StudentLife() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
               Life Beyond
               <span className="block text-[#C9A13B]">
                 The Classroom.
@@ -108,8 +108,8 @@ export default function StudentLife() {
       </section>
 
       {/* INTRO */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+      <section className="py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:items-center lg:px-8">
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -166,7 +166,7 @@ export default function StudentLife() {
             <img
               src={studentsImage}
               alt="Students at Corridors Of Hope"
-              className="h-[480px] w-full rounded-[2rem] object-cover shadow-2xl"
+              className="h-[360px] w-full rounded-[2rem] object-cover shadow-2xl lg:h-[420px]"
             />
           </motion.div>
 
@@ -174,7 +174,7 @@ export default function StudentLife() {
       </section>
 
       {/* ACTIVITIES */}
-      <section className="bg-[#F8F7F4] py-24 lg:py-32">
+      <section className="bg-[#F8F7F4] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div className="max-w-3xl">
@@ -252,7 +252,7 @@ export default function StudentLife() {
       </section>
 
       {/* CLOSING CTA */}
-      <section className="border-t border-[#C9A13B]/35 bg-[#F8F7F4] py-24 lg:py-28">
+      <section className="border-t border-[#C9A13B]/35 bg-[#F8F7F4] py-14 lg:py-20">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
 
           <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C7372F]">

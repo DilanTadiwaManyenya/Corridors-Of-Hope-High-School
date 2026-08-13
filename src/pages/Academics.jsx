@@ -50,7 +50,7 @@ export default function Academics() {
       {/* HERO */}
       <PageHero eyebrow="Academic Excellence" title="Preparing Students" highlight="For The Future." description="Our curriculum equips learners with knowledge, creativity, leadership and critical thinking for higher education and life." image={ClassroomImage} imageAlt="Classroom learning at Corridors Of Hope High School" imagePosition="center" />
       {/*
-      <section className="relative overflow-hidden bg-[#102A5C] py-28 lg:py-36">
+      <section className="relative overflow-hidden bg-[#102A5C] py-20 lg:py-28">
         <div className="absolute inset-0">
           <img
             src={studentsImage}
@@ -76,7 +76,7 @@ export default function Academics() {
               </span>
             </div>
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
               Preparing Students
               <span className="block text-[#C9A13B]">
                 For The Future.
@@ -93,8 +93,8 @@ export default function Academics() {
       </section> */}
 
       {/* INTRODUCTION */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:px-8 lg:items-center">
+      <section className="py-14 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8 lg:items-center">
 
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -136,7 +136,7 @@ export default function Academics() {
             <img
               src={studentsImage}
               alt="Students at Corridors Of Hope High School"
-              className="h-[420px] w-full rounded-[2rem] object-cover shadow-2xl"
+              className="h-[320px] w-full rounded-[2rem] object-cover shadow-2xl lg:h-[380px]"
             />
 
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-[#C9A13B] p-6 shadow-xl sm:block">
@@ -156,7 +156,7 @@ export default function Academics() {
       </section>
 
       {/* SUBJECT AREAS */}
-      <section className="bg-[#F8F7F4] py-24 lg:py-32">
+      <section className="bg-[#F8F7F4] py-14 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
           <div className="max-w-3xl">
@@ -216,8 +216,8 @@ export default function Academics() {
       </section>
 
       {/* WHAT STUDENTS DEVELOP */}
-      <section className="bg-[#102A5C] py-24 lg:py-32">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 lg:grid-cols-2 lg:px-8">
+      <section className="bg-[#102A5C] py-16 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 lg:grid-cols-2 lg:px-8">
 
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#C9A13B]">

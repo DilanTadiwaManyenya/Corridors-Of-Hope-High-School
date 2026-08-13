@@ -79,7 +79,7 @@ export default function Gallery() {
     <main className="bg-white">
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-[#102A5C] py-32 lg:py-40">
+      <section className="relative overflow-hidden bg-[#102A5C] py-20 lg:py-28">
         <img src={galleryhero} alt="School event at Corridors Of Hope High School" className="absolute inset-0 h-full w-full object-cover object-center opacity-55" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/88 via-[#102A5C]/72 to-[#102A5C]/35" />
         <div className="absolute inset-x-0 bottom-0 h-1 bg-[#C7372F]" />
@@ -111,7 +111,7 @@ export default function Gallery() {
 
             </div>
 
-            <h1 className="mt-6 text-5xl font-extrabold leading-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">
               Moments That
               <span className="block text-[#C9A13B]">
                 Tell Our Story.
@@ -130,7 +130,7 @@ export default function Gallery() {
       </section>
 
       {/* GALLERY */}
-      <section className="py-20 lg:py-28">
+      <section className="py-14 lg:py-20">
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
